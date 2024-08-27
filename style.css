@@ -1,0 +1,83 @@
+:root {
+    --cor-fundo-inicio: #f7e6e6;       /* Rosa claro */
+    --cor-fundo-fim: #e0b1b1;          /* Rosa pêssego */
+    --cor-principal-inicio: #b084cc;   /* Lilás */
+    --cor-principal-fim: #f2c4de;      /* Rosa bebê */
+    --cor-secundaria-inicio: #ffd1dc;  /* Rosa claro */
+    --cor-secundaria-fim: #ffc0cb;     /* Rosa */
+    --cor-destaque-inicio: #ffb6c1;    /* Rosa claro */
+    --cor-destaque-fim: #da70d6;       /* Orquídea média */
+    --cor-texto: #ffffff;              /* Branco para o texto */
+}
+
+body {
+    background: linear-gradient(135deg, var(--cor-fundo-inicio), var(--cor-fundo-fim));
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.caixa-principal {
+    background: linear-gradient(135deg, var(--cor-principal-inicio), var(--cor-principal-fim));
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ffd1dc; /* Rosa claro */
+    position: relative;
+}
+
+.caixa-principal:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #ff69b4; /* Rosa choque */
+    border-image: url('https://example.com/floral-border.png') 30 stretch; /* Use uma imagem floral */
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+h1 {
+    background: linear-gradient(90deg, var(--cor-destaque-inicio), var(--cor-destaque-fim));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none; /* Remove a sombra para texto mais nítido */
+    font-weight: 700;
+}
+
+button {
+    background: linear-gradient(135deg, var(--cor-secundaria-inicio), var(--cor-secundaria-fim));
+    color: var(--cor-texto);
+    border: 2px solid #da70d6; /* Orquídea média */
+    border-radius: 15px;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--cor-destaque-inicio), var(--cor-destaque-fim));
+    color: var(--cor-principal-fim);
+    transform: translateY(-2px);
+}
+.caixa-resultado{
+    display: none;
+}
+
+.caixa-resultado.mostrar{
+    display: block;
+}
+
+.caixa-alternativas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
